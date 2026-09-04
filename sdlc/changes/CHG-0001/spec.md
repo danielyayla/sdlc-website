@@ -46,8 +46,8 @@ concerns:
     owner: platform (dkapper01@gmail.com)
     resolved: false
     note: No .claude/skills directory exists in this repo; front-matter skills is empty
-created: 2026-09-04T11:56:24Z
-context_manifest: sha256:a8b209d6216a671f405fb30e0bfccb3a240bebac73d0bcba851680aaf8e8cdf1
+created: 2026-09-04T11:57:12Z
+context_manifest: sha256:39b7c2606b6efd84c1d4c24a9af4088448de7fff2943000620dae25ca719c7d9
 schema: 1
 ---
 # Spec: Add renderNav and slugify
