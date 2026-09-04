@@ -1,0 +1,11 @@
+baselineWindow: 30d
+metrics:
+  - metric: error_rate_pct
+    baseline: 0.4
+    unit: "%"
+    rules: [western-electric]
+    tiers:
+      1sigma: { action: log }
+      2sigma: { action: diagnose, tools: [Read, Grep] }
+      3sigma: { action: propose, routes: [pr] }
+runbooks: []

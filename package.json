@@ -1,0 +1,10 @@
+{
+  "name": "sdlc-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node --check src/site.js",
+    "test": "node --test",
+    "lint": "node scripts/lint.js"
+  }
+}

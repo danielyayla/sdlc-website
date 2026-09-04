@@ -1,0 +1,3 @@
+# Tech lead owns the lifecycle plans and the source
+/sdlc/changes/**/plan.md @danielyayla
+/src/ @danielyayla
