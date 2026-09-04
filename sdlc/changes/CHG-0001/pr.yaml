@@ -15,3 +15,5 @@ checks:
     verdict: pass
     summary: per-change run 1 · no eval cases intersect the diff
 planMatches: true
+mergedAt: 2026-09-04T12:43:46Z
+mergeSha: 1f980e0dd03abd126035cb4d9e81b331deae21db
