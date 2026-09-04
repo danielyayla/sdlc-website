@@ -46,8 +46,8 @@ concerns:
     owner: platform (dkapper01@gmail.com)
     resolved: false
     note: No .claude/skills directory exists in this repo; front-matter skills is empty
-created: 2026-09-04T11:57:12Z
-context_manifest: sha256:39b7c2606b6efd84c1d4c24a9af4088448de7fff2943000620dae25ca719c7d9
+created: 2026-09-04T11:58:19Z
+context_manifest: sha256:53e805cc132807ebe9c04f1941cbe246ab57d6a304bf420080f94fff2531459a
 schema: 1
 ---
 # Spec: Add renderNav and slugify
@@ -107,14 +107,14 @@ Two small pure functions are appended to the existing `src/site.js` module, reus
 export function slugify(text) {
   return String(text)
     .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")   // strip combining marks left by NFKD
+    .replace(/\p{M}/gu, "")            // strip combining marks left by NFKD
     .replace(/[^\x00-\x7f]/g, "")      // ASCII only (intent constraint)
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 }
 ```
-Order matters: normalise and strip before lower-casing so `É` folds to `e`; hyphen-collapse before trim so a leading `--` is removed in one pass. `String.prototype.normalize` is built into Node, so no dependency is added.
+Order matters: normalise and strip marks before lower-casing so `É` folds to `e`; hyphen-collapse before trim so a leading `--` is removed in one pass. `\p{M}` is the Unicode "Mark" property (requires the `u` flag) and matches the combining accents that NFKD splits off. `String.prototype.normalize` and property escapes are built into Node, so no dependency is added.
 
 ### `renderNav`
 ```js
