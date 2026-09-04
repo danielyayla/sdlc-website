@@ -27,3 +27,5 @@
 {"schema":1,"id":"01M1P6RP2BXVEK6NJZTG7BFHR2","ts":"2026-09-04T12:37:14Z","seq":26,"cycle":1,"actor":{"type":"human","id":"dkapper01@gmail.com","role":"eng"},"event":"gate.accepted","data":{"gate":3,"artifactSha":"9f7fbe1a39dd4f02109c89a9846dedb712ffa213","source":"pr.merge"}}
 {"schema":1,"id":"01M1P6RP2EFSCP5VB8SS7NM85J","ts":"2026-09-04T12:37:14Z","seq":27,"cycle":1,"actor":{"type":"system","id":"sdlc-bot"},"event":"stage.entered","data":{"stage":4}}
 {"schema":1,"id":"01M1P6ZCCDB2XMM8S1PQSHWYGY","ts":"2026-09-04T12:40:54Z","seq":29,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"evals.green","data":{"run":"run-1","passed":3,"total":3}}
+{"schema":1,"id":"01M1P6ZJ5FVSGC5WN7J84W04WC","ts":"2026-09-04T12:40:54Z","seq":30,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"pr.opened","data":{"headSha":"823113d383bbf104c67e691ad6fc68a4b614f406","number":5,"url":"https://github.com/danielyayla/sdlc-website/pull/5"}}
+{"schema":1,"id":"01M1P6ZJ5FP65XCAN5BCJDZSA5","ts":"2026-09-04T12:40:54Z","seq":31,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"stage.entered","data":{"stage":5}}

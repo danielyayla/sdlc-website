@@ -1,0 +1,17 @@
+schema: 1
+provider: github
+number: 5
+url: https://github.com/danielyayla/sdlc-website/pull/5
+branch: CHG-0001/src
+baseBranch: main
+headSha: 823113d383bbf104c67e691ad6fc68a4b614f406
+openedAt: 2026-09-04T12:40:54Z
+reviewers: []
+checks:
+  - name: evidence
+    verdict: pass
+    summary: per-change run 1 green · 3/3 verification commands passed
+  - name: evals
+    verdict: pass
+    summary: per-change run 1 · no eval cases intersect the diff
+planMatches: true
