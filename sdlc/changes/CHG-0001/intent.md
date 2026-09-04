@@ -1,25 +1,25 @@
 ---
 id: CHG-0001
 artifact: intent
-cycle: 1
+cycle: 2
 author: dkapper01@gmail.com
-created: 2026-09-04T09:28:42Z
+created: 2026-09-04T12:57:36Z
 status: draft
 schema: 1
 ---
-# Intent: Add renderNav and slugify
+# Intent: slugify collides on punctuation-only differences
 
 ## Problem
-Pages are assembled by hand: every page repeats the navigation markup, and anchor ids are typed by hand, so links break when a heading changes.
+"Sign in" and "Sign-in" both slugify to "sign-in", so two headings on the docs page share an id and in-page links jump to the wrong section; 2 bug reports on 2026-09-04; error_rate_pct 1.1% vs baseline 0.4%.
 
 ## Proposed outcome
-src/site.js exports slugify(text) (lower-case, hyphen-separated, ASCII only) and renderNav(items) (an unordered list of escaped links built from {label, href}) alongside renderPage, each pure and covered by a test under test/.
+A uniqueSlugs(titles) helper that suffixes repeats (-2, -3 …) and a test proving distinct ids for colliding titles; slugify itself unchanged.
 
 ## Affected users and systems
-Internal callers of src/site.js; the test suite under test/.
+src/site.js callers on the docs page; the test suite under test/.
 
 ## Constraints
-Keep functions pure; no dependencies; src files start with a comment line (lint rule); existing renderPage and escapeHtml behaviour unchanged.
+<carried from the previous cycle>
 
 ## Open questions
-Should renderNav mark the current page? (No — keep this change small.)
+Should renderNav call uniqueSlugs itself, or stay a pure formatter?

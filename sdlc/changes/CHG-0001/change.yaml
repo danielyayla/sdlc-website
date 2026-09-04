@@ -1,7 +1,7 @@
 schema: 1
 id: CHG-0001
 title: Add renderNav and slugify
-kind: feature
+kind: fix
 risk: routine
 created:
   by: dkapper01@gmail.com
@@ -9,6 +9,6 @@ created:
 origin:
   type: idea
 record: null
-cycle: 1
+cycle: 2
 repro: null
 closed: null
