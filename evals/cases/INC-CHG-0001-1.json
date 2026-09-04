@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "INC-CHG-0001-1",
+  "prompt": "Reproduce and verify the fix for: slugify collides on punctuation-only differences",
+  "checks": [],
+  "source": {
+    "type": "incident",
+    "ref": "CHG-0001"
+  },
+  "owner": "dkapper01@gmail.com",
+  "added": "2026-09-04T12:57:36Z",
+  "status": "draft",
+  "paths": [
+    "src/site.js",
+    "test/slugify.test.js",
+    "test/nav.test.js"
+  ]
+}
