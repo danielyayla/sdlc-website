@@ -30,3 +30,4 @@
 {"schema":1,"id":"01M1P6ZJ5FVSGC5WN7J84W04WC","ts":"2026-09-04T12:40:54Z","seq":30,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"pr.opened","data":{"headSha":"823113d383bbf104c67e691ad6fc68a4b614f406","number":5,"url":"https://github.com/danielyayla/sdlc-website/pull/5"}}
 {"schema":1,"id":"01M1P6ZJ5FP65XCAN5BCJDZSA5","ts":"2026-09-04T12:40:54Z","seq":31,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"stage.entered","data":{"stage":5}}
 {"schema":1,"id":"01M1P6ZJN3QJHKMG5JFPD53XFV","ts":"2026-09-04T12:41:00Z","seq":32,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"session.started","data":{"session":"sess-ggqv5kwh6d","mode":"HEADLESS","worktree":"CHG-0001/src"}}
+{"schema":1,"id":"01M1P74HTJK5N251CGFF6VQRT3","ts":"2026-09-04T12:43:43Z","seq":33,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"session.stopped","data":{"session":"sess-ggqv5kwh6d","reason":"done"}}
