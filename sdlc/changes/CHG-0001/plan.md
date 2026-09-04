@@ -4,8 +4,8 @@ artifact: plan
 cycle: 1
 spec_sha: a8e6c8143d6c4b8d5512fb6937dd2435c3881ab7
 rev: 2
-accepted_by: null
-accepted_at: null
+accepted_by: dkapper01@gmail.com
+accepted_at: 2026-09-04T12:37:14Z
 acceptance_line: npm run build, npm test and npm run lint all exit 0; npm test reports 15 tests passing (2 existing in test/render.test.js unchanged, 8 in test/slugify.test.js, 5 in test/nav.test.js, titles carrying T1–T8); git status --short lists only src/site.js, test/slugify.test.js and test/nav.test.js.
 context_manifest: sha256:5abb7be8a5e130ec2d17db64177197b82fae2d600308327f30edae35687f00c8
 schema: 1
