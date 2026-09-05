@@ -1,0 +1,22 @@
+schema: 1
+changeId: CHG-0002
+cycle: 1
+tasks:
+  - id: src
+    title: Work in src
+    files:
+      - src/site.js
+    sequential: false
+    target: npm run build, npm test and npm run lint all exit 0; npm test reports 21 tests passing (15 existing in test/render.test.js, test/nav.test.js and test/slugify.test.js unchanged, 6 in new test/footer.test.js with titles carrying T1–T5 and R1.8); git status --short lists only src/site.js and test/footer.test.js.
+    worktree: CHG-0002/src
+    branch: CHG-0002/src
+    state: confirmed
+  - id: test
+    title: Work in test
+    files:
+      - test/footer.test.js
+    sequential: false
+    target: npm run build, npm test and npm run lint all exit 0; npm test reports 21 tests passing (15 existing in test/render.test.js, test/nav.test.js and test/slugify.test.js unchanged, 6 in new test/footer.test.js with titles carrying T1–T5 and R1.8); git status --short lists only src/site.js and test/footer.test.js.
+    worktree: CHG-0002/test
+    branch: CHG-0002/test
+    state: confirmed
