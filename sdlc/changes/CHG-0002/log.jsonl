@@ -25,3 +25,5 @@
 {"schema":1,"id":"01M1R8KMW9T8P33M6PBZYSVCCR","ts":"2026-09-05T07:47:55Z","seq":24,"cycle":1,"actor":{"type":"system","id":"sdlc-bot"},"event":"stage.entered","data":{"stage":4}}
 {"schema":1,"id":"01M1R8MK8ZQPQH852ZC5YP7H08","ts":"2026-09-05T07:48:27Z","seq":25,"cycle":1,"actor":{"type":"human","id":"dkapper01@gmail.com","role":"eng"},"event":"tasks.confirmed","data":{"taskIds":["src","test"]}}
 {"schema":1,"id":"01M1R8RANW532TAWB87PPWECKE","ts":"2026-09-05T07:50:29Z","seq":26,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"evals.green","data":{"run":"run-1","passed":3,"total":3}}
+{"schema":1,"id":"01M1R8RF6EYK41DYPN04VE021V","ts":"2026-09-05T07:50:29Z","seq":27,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"pr.opened","data":{"headSha":"76d8d1e31c956e9d1632b3e91b0fbe72c1d33f9a","number":12,"url":"https://github.com/danielyayla/sdlc-website/pull/12"}}
+{"schema":1,"id":"01M1R8RF6E5KSE50E09RG9EBQH","ts":"2026-09-05T07:50:29Z","seq":28,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"stage.entered","data":{"stage":5}}
