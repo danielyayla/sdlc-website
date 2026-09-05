@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "RUN-0001",
+  "trigger": "manual",
+  "configRef": {
+    "claudeMdSha": "bf6081f14c0f70affb90ec9701570b96d8c67066",
+    "hooksSha": "57b277d055f17bea2589a217f4f6c3ca99fcda68",
+    "skills": [],
+    "model": "unpinned"
+  },
+  "results": [],
+  "passRate": 1,
+  "threshold": 0.9,
+  "verdict": "pass",
+  "cost": 0,
+  "startedAt": "2026-09-05T07:38:39Z",
+  "finishedAt": "2026-09-05T07:38:39Z"
+}
