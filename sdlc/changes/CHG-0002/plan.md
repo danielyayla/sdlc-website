@@ -4,8 +4,8 @@ artifact: plan
 cycle: 1
 spec_sha: 50275b45de2a291ee17101933b5fb7bc9a90914d
 rev: 2
-accepted_by: null
-accepted_at: null
+accepted_by: dkapper01@gmail.com
+accepted_at: 2026-09-05T07:47:55Z
 acceptance_line: npm run build, npm test and npm run lint all exit 0; npm test reports 21 tests passing (15 existing in test/render.test.js, test/nav.test.js and test/slugify.test.js unchanged, 6 in new test/footer.test.js with titles carrying T1–T5 and R1.8); git status --short lists only src/site.js and test/footer.test.js.
 context_manifest: sha256:ff4c35d036e9c08af0c9e9844beda49622c7b367f8ba9a76a6dc430f7ee2487a
 schema: 1
