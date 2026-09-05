@@ -22,3 +22,7 @@ export function renderNav(items) {
     `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`);
   return `<ul>${lis.join("")}</ul>`;
 }
+
+export function renderFooter({ owner, year }) {
+  return `<footer>&copy; ${escapeHtml(year)} ${escapeHtml(owner)}</footer>`;
+}
