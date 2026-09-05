@@ -38,3 +38,4 @@
 {"schema":1,"id":"01M1R8SYR53N2S7HSX3PRQR7M7","ts":"2026-09-05T07:51:22Z","seq":33,"cycle":1,"actor":{"type":"human","id":"dkapper01@gmail.com","role":"eng"},"event":"gate.accepted","data":{"gate":5,"artifactSha":"c0f138b2073ca9f929af749e1b45f7bcc28de023","source":"pr.merge"}}
 {"schema":1,"id":"01M1R8SYR52AEZZ2MY2KA8NWQV","ts":"2026-09-05T07:51:22Z","seq":34,"cycle":1,"actor":{"type":"human","id":"dkapper01@gmail.com","role":"eng"},"event":"pr.merged","data":{"number":12,"mergeSha":"1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28"}}
 {"schema":1,"id":"01M1R8SYR5CBAG7ZW61ZZH2EAZ","ts":"2026-09-05T07:51:22Z","seq":35,"cycle":1,"actor":{"type":"system","id":"sdlc-bot"},"event":"stage.entered","data":{"stage":6}}
+{"schema":1,"id":"01M1R8WHNEHX5XZHX4PBW8XH0X","ts":"2026-09-05T07:52:47Z","seq":36,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"session.stopped","data":{"session":"sess-r7rrxfpfb3","reason":"done"}}
