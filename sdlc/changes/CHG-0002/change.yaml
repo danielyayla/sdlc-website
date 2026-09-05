@@ -1,0 +1,14 @@
+schema: 1
+id: CHG-0002
+title: Add renderFooter with the build year
+kind: feature
+risk: routine
+created:
+  by: dkapper01@gmail.com
+  at: 2026-09-05T01:01:41Z
+origin:
+  type: idea
+record: null
+cycle: 1
+repro: null
+closed: null
