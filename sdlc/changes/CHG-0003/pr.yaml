@@ -14,4 +14,14 @@ checks:
   - name: evals
     verdict: pass
     summary: per-change run 1 · no eval cases intersect the diff
+  - name: findings
+    verdict: pass
 planMatches: true
+findings:
+  high: 0
+  medium: 0
+  low: 0
+review:
+  session: sess-gk6w4q1pvw
+  headSha: 166849201e4ce64b652919c5a5c2db7eeeabaadc
+  at: 2026-09-08T11:22:22Z
