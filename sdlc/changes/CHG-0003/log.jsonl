@@ -23,3 +23,4 @@
 {"schema":1,"id":"01M20BD2WWYPS9A7RFZ7XJXM62","ts":"2026-09-08T11:10:42Z","seq":23,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"session.stopped","data":{"session":"sess-xyhvj6cwdz","reason":"done"}}
 {"schema":1,"id":"01M20BTZFMZ1896E9N2MWWB9TS","ts":"2026-09-08T11:18:17Z","seq":24,"cycle":1,"actor":{"type":"human","id":"dkapper01@gmail.com","role":"eng"},"event":"gate.accepted","data":{"gate":3,"artifactSha":"c293b9f01af370789623895a63f0ed8f9e9c52c1","source":"pr.merge"}}
 {"schema":1,"id":"01M20BTZFQ9JP6V6SR3WFZG0ZD","ts":"2026-09-08T11:18:17Z","seq":25,"cycle":1,"actor":{"type":"system","id":"sdlc-bot"},"event":"stage.entered","data":{"stage":4}}
+{"schema":1,"id":"01M20BV9909HFDSVJZCED91RWS","ts":"2026-09-08T11:18:27Z","seq":27,"cycle":1,"actor":{"type":"human","id":"dkapper01@gmail.com","role":"eng"},"event":"tasks.confirmed","data":{"taskIds":["src","test"]}}
