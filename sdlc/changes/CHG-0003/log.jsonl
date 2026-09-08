@@ -27,3 +27,4 @@
 {"schema":1,"id":"01M20BYXKMNED97WFNRG4BA8VZ","ts":"2026-09-08T11:20:26Z","seq":28,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"evals.green","data":{"run":"run-1","passed":3,"total":3}}
 {"schema":1,"id":"01M20BZ345ZS8Y355GG68NNPZR","ts":"2026-09-08T11:20:26Z","seq":29,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"pr.opened","data":{"headSha":"166849201e4ce64b652919c5a5c2db7eeeabaadc","number":18,"url":"https://github.com/danielyayla/sdlc-website/pull/18"}}
 {"schema":1,"id":"01M20BZ345K5Y2K74P9B6HVZZG","ts":"2026-09-08T11:20:26Z","seq":30,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"stage.entered","data":{"stage":5}}
+{"schema":1,"id":"01M20BZ7DRZYA0Y1N848D4Q5R4","ts":"2026-09-08T11:20:36Z","seq":31,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"session.started","data":{"session":"sess-gk6w4q1pvw","mode":"HEADLESS","worktree":"CHG-0003/src"}}
