@@ -26,3 +26,9 @@ export function renderNav(items) {
 export function renderFooter({ owner, year }) {
   return `<footer>&copy; ${escapeHtml(year)} ${escapeHtml(owner)}</footer>`;
 }
+
+export function renderMeta({ title, description }) {
+  const titleTag = `<title>${escapeHtml(title)}</title>`;
+  if (description === undefined || description === null) return titleTag;
+  return `${titleTag}<meta name="description" content="${escapeHtml(description)}">`;
+}
