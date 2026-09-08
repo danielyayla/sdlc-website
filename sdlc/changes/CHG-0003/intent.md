@@ -1,25 +1,25 @@
 ---
 id: CHG-0003
 artifact: intent
-cycle: 1
+cycle: 2
 author: dkapper01@gmail.com
-created: 2026-09-08T10:53:34Z
+created: 2026-09-08T11:29:34Z
 status: draft
 schema: 1
 ---
-# Intent: Add renderMeta for page head tags
+# Intent: renderMeta emits a title of "undefined" when the title is missing
 
 ## Problem
-Each page's <head> is written by hand, so the title and description tags are inconsistent and unescaped text has slipped into them.
+Pages rendered without a title show "<title>undefined</title>" in the browser tab; 3 reports on 2026-09-08 from the docs index; the spec asked for the coercion but callers expected a fallback.
 
 ## Proposed outcome
-src/site.js exports renderMeta({ title, description }) that returns the <title> and <meta name="description"> tags as one string, with both values escaped, pure and covered by a test under test/.
+renderMeta falls back to the site name when title is absent, with a test proving the tab title is never the string "undefined"; renderMeta's escaping unchanged.
 
 ## Affected users and systems
-Internal callers of src/site.js; the test suite under test/.
+src/site.js callers on the docs index; the test suite under test/.
 
 ## Constraints
-Keep functions pure; no dependencies; src files start with a comment line (lint rule); existing exports unchanged.
+<carried from the previous cycle>
 
 ## Open questions
-Should a missing description omit the meta tag? (Yes — render only <title> when description is absent.)
+Should the fallback be configurable per page? (No — one site name, passed by the caller.)
