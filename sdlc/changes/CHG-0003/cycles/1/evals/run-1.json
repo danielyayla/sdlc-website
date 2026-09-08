@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "n": 1,
+  "changeId": "CHG-0003",
+  "cycle": 1,
+  "worktree": "CHG-0003/src",
+  "headSha": "166849201e4ce64b652919c5a5c2db7eeeabaadc",
+  "fileSet": [
+    "src/site.js",
+    "test/meta.test.js"
+  ],
+  "configRef": {
+    "claudeMdSha": "bf6081f14c0f70affb90ec9701570b96d8c67066",
+    "hooksSha": "57b277d055f17bea2589a217f4f6c3ca99fcda68",
+    "skills": [],
+    "model": "unpinned"
+  },
+  "results": [],
+  "commandResults": [
+    {
+      "name": "build",
+      "cmd": "npm run build",
+      "exitCode": 0,
+      "pass": true,
+      "output": "\n> build\n> node --check src/site.js\n\n"
+    },
+    {
+      "name": "test",
+      "cmd": "npm test",
+      "exitCode": 0,
+      "pass": true,
+      "output": "\n> test\n> node --test\n\nTAP version 13\n# Subtest: T1 renderFooter renders copyright entity, year, owner\nok 1 - T1 renderFooter renders copyright entity, year, owner\n  ---\n  duration_ms: 0.453542\n  type: 'test'\n  ...\n# Subtest: T2 renderFooter escapes ampersand in owner (C1)\nok 2 - T2 renderFooter escapes ampersand in owner (C1)\n  ---\n  duration_ms: 0.129584\n  type: 'test'\n  ...\n# Subtest: T3 renderFooter escapes metacharacters in owner and year (C1, C2)\nok 3 - T3 renderFooter escapes metacharacters in owner and year (C1, C2)\n  ---\n  duration_ms: 0.231958\n  type: 'test'\n  ...\n# Subtest: T4 renderFooter renders string and number year identically (R1.4)\nok 4 - T4 renderFooter renders string and number year identically (R1.4)\n  ---\n  duration_ms: 0.072625\n  type: 'test'\n  ...\n# Subtest: T5 renderFooter is pure and never reads the clock (R1.7, R1.9)\nok 5 - T5 renderFooter is pure and never reads the clock (R1.7, R1.9)\n  ---\n  duration_ms: 0.9635\n  type: 'test'\n  ...\n# Subtest: R1.8 renderFooter coerces missing fields to \"undefined\" like the other helpers (C9)\nok 6 - R1.8 renderFooter coerces missing fields to \"undefined\" like the other helpers (C9)\n  ---\n  duration_ms: 0.070917\n  type: 'test'\n  ...\n# Subtest: T1 renderMeta renders title then description meta with no separator (R1.2)\nok 7 - T1 renderMeta renders title then description meta with no separator (R1.2)\n  ---\n  duration_ms: 0.466417\n  type: 'test'\n  ...\n# Subtest: T2 renderMeta escapes & and < in both values (C1)\nok 8 - T2 renderMeta escapes & and < in both values (C1)\n  ---\n  duration_ms: 0.671583\n  type: 'test'\n  ...\n# Subtest: T3 renderMeta neutralises title breakout and attribute breakout (C1, C2)\nok 9 - T3 renderMeta neutralises title breakout and attribute breakout (C1, C2)\n  ---\n  duration_ms: 0.36575\n  type: 'test'\n  ...\n# Subtest: T4 renderMeta omits the meta tag when description is undefined (R1.7)\nok 10 - T4 renderMeta omits the meta tag when description is undefined (R1.7)\n  ---\n  duration_ms: 0.101708\n  type: 'test'\n  ...\n# Subtest: T5 renderMeta treats null description as absent (R1.7)\nok 11 - T5 renderMeta treats null description as absent (R1.7)\n  ---\n  duration_ms: 0.160917\n  type: 'test'\n  ...\n# Subtest: T6 renderMeta emits an empty content attribute for an empty string (R1.8)\nok 12 - T6 renderMeta emits an empty content attribute for an empty string (R1.8)\n  ---\n  duration_ms: 0.055417\n  type: 'test'\n  ...\n# Subtest: T7 renderMeta is pure and coerces a missing title to \"undefined\" (R1.9, R1.11)\nok 13 - T7 renderMeta is pure and coerces a missing title to \"undefined\" (R1.9, R1.11)\n  ---\n  duration_ms: 0.136208\n  type: 'test'\n  ...\n# Subtest: T6 renderNav renders items in order with escaped label and href\nok 14 - T6 renderNav renders items in order with escaped label and href\n  ---\n  duration_ms: 0.784458\n  type: 'test'\n  ...\n# Subtest: T7 renderNav escapes HTML metacharacters in label and href (C1)\nok 15 - T7 renderNav escapes HTML metacharacters in label and href (C1)\n  ---\n  duration_ms: 0.0905\n  type: 'test'\n  ...\n# Subtest: T8 renderNav returns an empty list for no items\nok 16 - T8 renderNav returns an empty list for no items\n  ---\n  duration_ms: 0.967041\n  type: 'test'\n  ...\n# Subtest: R2.2 renderNav coerces label and href with String()\nok 17 - R2.2 renderNav coerces label and href with String()\n  ---\n  duration_ms: 0.089333\n  type: 'test'\n  ...\n# Subtest: R2.1/R2.4 renderNav emits no whitespace between elements, classes or aria-current\nok 18 - R2.1/R2.4 renderNav emits no whitespace between elements, classes or aria-current\n  ---\n  duration_ms: 0.23925\n  type: 'test'\n  ...\n# Subtest: escapeHtml escapes the four HTML metacharacters\nok 19 - escapeHtml escapes the four HTML metacharacters\n  ---\n  duration_ms: 0.475875\n  type: 'test'\n  ...\n# Subtest: renderPage wraps the body and escapes the title\nok 20 - renderPage wraps the body and escapes the title\n  ---\n  duration_ms: 0.108708\n  type: 'test'\n  ...\n# Subtest: T1 slugify lower-cases and collapses punctuation\nok 21 - T1 slugify lower-cases and collapses punctuation\n  ---\n  duration_ms: 0.715458\n  type: 'test'\n  ...\n# Subtest: T2 slugify collapses runs and trims leading/trailing hyphens\nok 22 - T2 slugify collapses runs and trims leading/trailing hyphens\n  ---\n  duration_ms: 0.819541\n  type: 'test'\n  ...\n# Subtest: T3 slugify folds diacritics (R1.6)\nok 23 - T3 slugify folds diacritics (R1.6)\n  ---\n  duration_ms: 0.226917\n  type: 'test'\n  ...\n# Subtest: T4 slugify drops non-ASCII with no decomposition (R1.6, C3)\nok 24 - T4 slugify drops non-ASCII with no decomposition (R1.6, C3)\n  ---\n  duration_ms: 0.069708\n  type: 'test'\n  ...\n# Subtest: T5 slugify coerces numbers (R1.5)\nok 25 - T5 slugify coerces numbers (R1.5)\n  ---\n  duration_ms: 0.057042\n  type: 'test'\n  ...\n# Subtest: R1.5 slugify coerces null and undefined with String()\nok 26 - R1.5 slugify coerces null and undefined with String()\n  ---\n  duration_ms: 0.049166\n  type: 'test'\n  ...\n# Subtest: R1.1/R1.4 slugify output uses only a-z0-9- with no edge hyphens\nok 27 - R1.1/R1.4 slugify output uses only a-z0-9- with no edge hyphens\n  ---\n  duration_ms: 0.227292\n  type: 'test'\n  ...\n# Subtest: R1.7 slugify is idempotent\nok 28 - R1.7 slugify is idempotent\n  ---\n  duration_ms: 0.049375\n  type: 'test'\n  ...\n1..28\n# tests 28\n# suites 0\n# pass 28\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 79.477416\n"
+    },
+    {
+      "name": "lint",
+      "cmd": "npm run lint",
+      "exitCode": 0,
+      "pass": true,
+      "output": "\n> lint\n> node scripts/lint.js\n\n"
+    }
+  ],
+  "verdict": "green",
+  "startedAt": "2026-09-08T11:20:25Z",
+  "finishedAt": "2026-09-08T11:20:26Z"
+}

@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "id": "INC-CHG-0003-1",
+  "prompt": "Reproduce and verify the fix for: renderMeta emits a title of \"undefined\" when the title is missing",
+  "checks": [],
+  "source": {
+    "type": "incident",
+    "ref": "CHG-0003"
+  },
+  "owner": "dkapper01@gmail.com",
+  "added": "2026-09-08T11:29:34Z",
+  "status": "draft",
+  "paths": [
+    "src/site.js",
+    "test/meta.test.js"
+  ]
+}

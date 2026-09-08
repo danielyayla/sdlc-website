@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "n": 1,
+  "ts": "2026-09-08T11:19:53Z",
+  "results": [
+    {
+      "name": "npm run build",
+      "pass": true,
+      "exitCode": 0,
+      "outputExcerpt": "> build\n> node --check src/site.js\n\n(exit 0, no output)"
+    },
+    {
+      "name": "npm test",
+      "pass": true,
+      "exitCode": 0,
+      "outputExcerpt": "ok 7 - T1 renderMeta renders title then description meta with no separator (R1.2)\nok 8 - T2 renderMeta escapes & and < in both values (C1)\nok 9 - T3 renderMeta neutralises title breakout and attribute breakout (C1, C2)\nok 10 - T4 renderMeta omits the meta tag when description is undefined (R1.7)\nok 11 - T5 renderMeta treats null description as absent (R1.7)\nok 12 - T6 renderMeta emits an empty content attribute for an empty string (R1.8)\nok 13 - T7 renderMeta is pure and coerces a missing title to \"undefined\" (R1.9, R1.11)\n# tests 28\n# pass 28\n# fail 0"
+    },
+    {
+      "name": "npm run lint",
+      "pass": true,
+      "exitCode": 0,
+      "outputExcerpt": "> lint\n> node scripts/lint.js\n\n(exit 0, no findings)"
+    },
+    {
+      "name": "git status --short",
+      "pass": true,
+      "exitCode": 0,
+      "outputExcerpt": " M src/site.js\n?? test/meta.test.js"
+    }
+  ]
+}
