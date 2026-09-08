@@ -24,3 +24,4 @@
 {"schema":1,"id":"01M20BTZFMZ1896E9N2MWWB9TS","ts":"2026-09-08T11:18:17Z","seq":24,"cycle":1,"actor":{"type":"human","id":"dkapper01@gmail.com","role":"eng"},"event":"gate.accepted","data":{"gate":3,"artifactSha":"c293b9f01af370789623895a63f0ed8f9e9c52c1","source":"pr.merge"}}
 {"schema":1,"id":"01M20BTZFQ9JP6V6SR3WFZG0ZD","ts":"2026-09-08T11:18:17Z","seq":25,"cycle":1,"actor":{"type":"system","id":"sdlc-bot"},"event":"stage.entered","data":{"stage":4}}
 {"schema":1,"id":"01M20BV9909HFDSVJZCED91RWS","ts":"2026-09-08T11:18:27Z","seq":27,"cycle":1,"actor":{"type":"human","id":"dkapper01@gmail.com","role":"eng"},"event":"tasks.confirmed","data":{"taskIds":["src","test"]}}
+{"schema":1,"id":"01M20BYXKMNED97WFNRG4BA8VZ","ts":"2026-09-08T11:20:26Z","seq":28,"cycle":1,"actor":{"type":"system","id":"sdlc-bot@sdlc.local"},"event":"evals.green","data":{"run":"run-1","passed":3,"total":3}}
