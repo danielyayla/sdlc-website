@@ -1,0 +1,14 @@
+schema: 1
+id: CHG-0003
+title: Add renderMeta for page head tags
+kind: feature
+risk: routine
+created:
+  by: dkapper01@gmail.com
+  at: 2026-09-08T10:53:34Z
+origin:
+  type: idea
+record: null
+cycle: 1
+repro: null
+closed: null
