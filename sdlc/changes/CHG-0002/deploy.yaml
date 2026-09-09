@@ -1,0 +1,17 @@
+schema: 1
+env: staging
+version: 1bcd38a
+at: 2026-09-09T08:54:15Z
+status: running
+environments:
+  - env: staging
+    kind: staging
+    status: running
+    sha: 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+    version: 1bcd38a
+    command: sh scripts/deploy.sh staging
+    startedAt: 2026-09-09T08:54:15Z
+    output: ""
+    actor:
+      type: human
+      id: dkapper01@gmail.com
