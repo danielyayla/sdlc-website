@@ -1,8 +1,8 @@
 schema: 1
-env: production
+env: preview
 version: 1bcd38a
-at: 2026-09-09T08:56:19Z
-status: succeeded
+at: 2026-09-09T08:56:53Z
+status: running
 rehearsals:
   - env: staging
     kind: staging
@@ -82,5 +82,14 @@ environments:
       output: |
         healthcheck.sh: renderPage ok (91 bytes)
         healthcheck.sh: production healthy — running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
-authorizedBy: dkapper01@gmail.com
-authorizedAt: 2026-09-09T08:56:19Z
+  - env: preview
+    kind: preview
+    status: running
+    sha: 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+    version: 1bcd38a
+    command: sh scripts/deploy.sh preview
+    startedAt: 2026-09-09T08:56:53Z
+    output: ""
+    actor:
+      type: human
+      id: dkapper01@gmail.com
