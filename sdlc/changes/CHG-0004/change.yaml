@@ -1,0 +1,15 @@
+schema: 1
+id: CHG-0004
+title: "open_todos 2σ: untracked provocation file src/provoke-todo.js in the main checkout carries both TODOs"
+kind: feature
+risk: routine
+created:
+  by: dkapper01@gmail.com
+  at: 2026-09-09T09:12:26Z
+origin:
+  type: triage
+  ref: TRI-0001
+record: null
+cycle: 1
+repro: null
+closed: null
