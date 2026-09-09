@@ -2,7 +2,7 @@ schema: 1
 env: preview
 version: 1bcd38a
 at: 2026-09-09T08:56:53Z
-status: running
+status: succeeded
 rehearsals:
   - env: staging
     kind: staging
@@ -84,12 +84,28 @@ environments:
         healthcheck.sh: production healthy — running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
   - env: preview
     kind: preview
-    status: running
+    status: succeeded
     sha: 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
     version: 1bcd38a
     command: sh scripts/deploy.sh preview
     startedAt: 2026-09-09T08:56:53Z
-    output: ""
+    output: |
+      deploy.sh: built 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 (src/, package.json) for preview — node --check src/site.js ok
+      deploy.sh: first release of preview — there is no previous release to roll back to yet
+      deploy.sh: preview is now running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 at dist/preview/current
+      env=preview
+      kind=preview
+      sha=1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+      change=CHG-0002
+      deployedAt=2026-09-09T08:56:53Z
     actor:
       type: human
       id: dkapper01@gmail.com
+    finishedAt: 2026-09-09T08:56:53Z
+    exitCode: 0
+    healthcheck:
+      command: sh scripts/healthcheck.sh preview
+      exitCode: 0
+      output: |
+        healthcheck.sh: renderPage ok (91 bytes)
+        healthcheck.sh: preview healthy — running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
