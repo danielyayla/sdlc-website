@@ -2,9 +2,7 @@ schema: 1
 env: production
 version: 1bcd38a
 at: 2026-09-09T08:56:19Z
-status: running
-authorizedBy: dkapper01@gmail.com
-authorizedAt: 2026-09-09T08:56:19Z
+status: succeeded
 rehearsals:
   - env: staging
     kind: staging
@@ -57,14 +55,32 @@ environments:
         healthcheck.sh: staging healthy — running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
   - env: production
     kind: production
-    status: running
+    status: succeeded
     sha: 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
     version: 1bcd38a
     command: sh scripts/deploy.sh production
     startedAt: 2026-09-09T08:56:19Z
-    output: ""
+    output: |
+      deploy.sh: built 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 (src/, package.json) for production — node --check src/site.js ok
+      deploy.sh: first release of production — there is no previous release to roll back to yet
+      deploy.sh: production is now running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 at dist/production/current
+      env=production
+      kind=production
+      sha=1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+      change=CHG-0002
+      deployedAt=2026-09-09T08:56:19Z
     actor:
       type: human
       id: dkapper01@gmail.com
     authorizedBy: dkapper01@gmail.com
     authorizedAt: 2026-09-09T08:56:19Z
+    finishedAt: 2026-09-09T08:56:19Z
+    exitCode: 0
+    healthcheck:
+      command: sh scripts/healthcheck.sh production
+      exitCode: 0
+      output: |
+        healthcheck.sh: renderPage ok (91 bytes)
+        healthcheck.sh: production healthy — running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+authorizedBy: dkapper01@gmail.com
+authorizedAt: 2026-09-09T08:56:19Z
