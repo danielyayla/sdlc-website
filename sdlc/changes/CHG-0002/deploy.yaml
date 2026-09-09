@@ -1,0 +1,111 @@
+schema: 1
+env: preview
+version: 1bcd38a
+at: 2026-09-09T08:56:53Z
+status: succeeded
+rehearsals:
+  - env: staging
+    kind: staging
+    sha: 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+    status: succeeded
+    command: sh scripts/rollback.sh staging
+    rehearsedAt: 2026-09-09T08:56:01Z
+    finishedAt: 2026-09-09T08:56:01Z
+    exitCode: 0
+    output: |
+      rollback.sh: staging rolled back from 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 to 1871ea878937e40819b7eb4cb9c12bd6c681fc49 — node --check src/site.js ok; the rolled-back release is kept at dist/staging/rolled-back
+      env=staging
+      kind=
+      sha=1871ea878937e40819b7eb4cb9c12bd6c681fc49
+      change=
+      deployedAt=2026-09-09T08:49:31Z
+      rolledBackFrom=1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+      rolledBackAt=2026-09-09T08:56:01Z
+      rollbackChange=CHG-0002
+    actor:
+      type: human
+      id: dkapper01@gmail.com
+environments:
+  - env: staging
+    kind: staging
+    status: succeeded
+    sha: 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+    version: 1bcd38a
+    command: sh scripts/deploy.sh staging
+    startedAt: 2026-09-09T08:54:15Z
+    output: |
+      deploy.sh: built 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 (src/, package.json) for staging — node --check src/site.js ok
+      deploy.sh: previous release 1871ea878937e40819b7eb4cb9c12bd6c681fc49 kept at dist/staging/previous
+      deploy.sh: staging is now running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 at dist/staging/current
+      env=staging
+      kind=staging
+      sha=1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+      change=CHG-0002
+      deployedAt=2026-09-09T08:54:15Z
+    actor:
+      type: human
+      id: dkapper01@gmail.com
+    finishedAt: 2026-09-09T08:54:16Z
+    exitCode: 0
+    healthcheck:
+      command: sh scripts/healthcheck.sh staging
+      exitCode: 0
+      output: |
+        healthcheck.sh: renderPage ok (91 bytes)
+        healthcheck.sh: staging healthy — running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+  - env: production
+    kind: production
+    status: succeeded
+    sha: 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+    version: 1bcd38a
+    command: sh scripts/deploy.sh production
+    startedAt: 2026-09-09T08:56:19Z
+    output: |
+      deploy.sh: built 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 (src/, package.json) for production — node --check src/site.js ok
+      deploy.sh: first release of production — there is no previous release to roll back to yet
+      deploy.sh: production is now running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 at dist/production/current
+      env=production
+      kind=production
+      sha=1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+      change=CHG-0002
+      deployedAt=2026-09-09T08:56:19Z
+    actor:
+      type: human
+      id: dkapper01@gmail.com
+    authorizedBy: dkapper01@gmail.com
+    authorizedAt: 2026-09-09T08:56:19Z
+    finishedAt: 2026-09-09T08:56:19Z
+    exitCode: 0
+    healthcheck:
+      command: sh scripts/healthcheck.sh production
+      exitCode: 0
+      output: |
+        healthcheck.sh: renderPage ok (91 bytes)
+        healthcheck.sh: production healthy — running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+  - env: preview
+    kind: preview
+    status: succeeded
+    sha: 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+    version: 1bcd38a
+    command: sh scripts/deploy.sh preview
+    startedAt: 2026-09-09T08:56:53Z
+    output: |
+      deploy.sh: built 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 (src/, package.json) for preview — node --check src/site.js ok
+      deploy.sh: first release of preview — there is no previous release to roll back to yet
+      deploy.sh: preview is now running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 at dist/preview/current
+      env=preview
+      kind=preview
+      sha=1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+      change=CHG-0002
+      deployedAt=2026-09-09T08:56:53Z
+    actor:
+      type: human
+      id: dkapper01@gmail.com
+    finishedAt: 2026-09-09T08:56:53Z
+    exitCode: 0
+    healthcheck:
+      command: sh scripts/healthcheck.sh preview
+      exitCode: 0
+      output: |
+        healthcheck.sh: renderPage ok (91 bytes)
+        healthcheck.sh: preview healthy — running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
