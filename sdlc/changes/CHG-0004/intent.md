@@ -1,17 +1,11 @@
 ---
+id: CHG-0004
+artifact: intent
+cycle: 1
+author: dkapper01@gmail.com
+created: 2026-09-09T09:12:26Z
+status: draft
 schema: 1
-id: TRI-0001
-tier: 2σ
-src: metric:open_todos
-title: "open_todos 2σ: untracked provocation file src/provoke-todo.js in the main checkout carries both TODOs"
-evidence: |
-  open_todos = 2 at 2026-09-09T08:59:03Z · baseline 0 · σ 1 · tier 2σ (2.00σ)
-  --- grep -rn 'TODO' src test scripts | wc -l (exit 0)
-         2
-createdAt: 2026-09-09T08:59:03Z
-status: open
-job: band:open_todos:2σ:2026-09-09T08:59:03Z
-session: sess-6y81hy5eff
 ---
 # Intent: open_todos 2σ: untracked provocation file src/provoke-todo.js in the main checkout carries both TODOs
 
