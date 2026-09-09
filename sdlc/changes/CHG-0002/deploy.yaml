@@ -31,3 +31,25 @@ environments:
       output: |
         healthcheck.sh: renderPage ok (91 bytes)
         healthcheck.sh: staging healthy — running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+rehearsals:
+  - env: staging
+    kind: staging
+    sha: 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+    status: succeeded
+    command: sh scripts/rollback.sh staging
+    rehearsedAt: 2026-09-09T08:56:01Z
+    finishedAt: 2026-09-09T08:56:01Z
+    exitCode: 0
+    output: |
+      rollback.sh: staging rolled back from 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 to 1871ea878937e40819b7eb4cb9c12bd6c681fc49 — node --check src/site.js ok; the rolled-back release is kept at dist/staging/rolled-back
+      env=staging
+      kind=
+      sha=1871ea878937e40819b7eb4cb9c12bd6c681fc49
+      change=
+      deployedAt=2026-09-09T08:49:31Z
+      rolledBackFrom=1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+      rolledBackAt=2026-09-09T08:56:01Z
+      rollbackChange=CHG-0002
+    actor:
+      type: human
+      id: dkapper01@gmail.com
