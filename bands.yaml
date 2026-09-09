@@ -1,11 +1,68 @@
+# Control bands for the SDLC website (blueprint §13; console item 3.4).
+# Each `source:` is a shell command the detection script runs from the repo root
+# (`sdlc detect` by hand, `sdlc serve --engine` every `detectEvery`, CI's sdlc-detect.yml);
+# the last numeric token it prints is the current value, its output is kept verbatim.
+# Tier = |current − baseline| / sigma (Western Electric rule 1): 1σ logs, 2σ raises a
+# triage item and a headless diagnose job, 3σ raises a propose job that may open a PR or
+# run an allowlisted runbook. The console parses this file and never edits it.
 baselineWindow: 30d
+detectEvery: 1m
 metrics:
-  - metric: error_rate_pct
-    baseline: 0.4
-    unit: "%"
+  # Deterministic: the count of node:test cases (`# tests N` from `node --test`).
+  - metric: test_count
+    baseline: 28
+    unit: tests
+    sigma: 3
+    source: "node --test 2>&1 | grep -E '^# tests '"
     rules: [western-electric]
     tiers:
       1sigma: { action: log }
-      2sigma: { action: diagnose, tools: [Read, Grep] }
+      2sigma: { action: diagnose, tools: [Read, Grep, Glob, "Bash(npm test)", "Bash(git log *)", "Bash(git diff *)"] }
       3sigma: { action: propose, routes: [pr] }
-runbooks: []
+  # Deterministic: lines of source under src/.
+  - metric: src_lines
+    baseline: 34
+    unit: lines
+    sigma: 40
+    source: "cat src/*.js | wc -l"
+    rules: [western-electric]
+    tiers:
+      1sigma: { action: log }
+      2sigma: { action: diagnose, tools: [Read, Grep, Glob, "Bash(npm run lint)", "Bash(git log *)", "Bash(git diff *)"] }
+      3sigma: { action: propose, routes: [pr, "runbook:rollback"] }
+  # Deterministic: bytes of source under src/ (the "bundle" of this static-site library).
+  - metric: src_bytes
+    baseline: 1268
+    unit: bytes
+    sigma: 1500
+    source: "cat src/*.js | wc -c"
+    rules: [western-electric]
+    tiers:
+      1sigma: { action: log }
+      2sigma: { action: diagnose, tools: [Read, Grep, Glob, "Bash(git log *)", "Bash(git diff *)"] }
+      3sigma: { action: propose, routes: [pr] }
+  # The provocation band for the exit run: TODO markers under src/, test/ and scripts/.
+  # baseline 0, sigma 1 → one TODO logs, two raise a 2σ diagnose job, three a 3σ propose job.
+  # Provoke: printf '// TODO: provoke\n// TODO: provoke\n' > src/provoke-todo.js   (untracked; delete it to clear)
+  - metric: open_todos
+    baseline: 0
+    unit: todos
+    sigma: 1
+    source: "grep -rn 'TODO' src test scripts | wc -l"
+    rules: [western-electric]
+    tiers:
+      1sigma: { action: log }
+      2sigma: { action: diagnose, tools: [Read, Grep, Glob, "Bash(npm test)", "Bash(npm run lint)", "Bash(git log *)", "Bash(git diff *)"] }
+      3sigma: { action: propose, routes: [pr, "runbook:rollback", "runbook:healthcheck"] }
+# The allowlist: the only commands a 3σ propose session may run, through the run_runbook tool,
+# and only for ids listed on its band's `runbook:<id>` routes. Output is recorded verbatim (RBK-NNNN).
+runbooks:
+  - id: rollback
+    command: sh scripts/rollback.sh staging
+    description: Roll staging back to its previous release (the same script the staging environment's rollback command runs; never production).
+  - id: healthcheck
+    command: sh scripts/healthcheck.sh staging
+    description: Check the release staging is running (marker, syntax, renderPage smoke test).
+  - id: test
+    command: npm test
+    description: Run the site's test suite once.
