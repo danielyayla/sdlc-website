@@ -1,17 +1,33 @@
 schema: 1
 env: staging
 version: 1bcd38a
-at: 2026-09-09T08:54:15Z
-status: running
+at: 2026-09-09T08:54:16Z
+status: succeeded
 environments:
   - env: staging
     kind: staging
-    status: running
+    status: succeeded
     sha: 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
     version: 1bcd38a
     command: sh scripts/deploy.sh staging
     startedAt: 2026-09-09T08:54:15Z
-    output: ""
+    output: |
+      deploy.sh: built 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 (src/, package.json) for staging — node --check src/site.js ok
+      deploy.sh: previous release 1871ea878937e40819b7eb4cb9c12bd6c681fc49 kept at dist/staging/previous
+      deploy.sh: staging is now running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28 at dist/staging/current
+      env=staging
+      kind=staging
+      sha=1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
+      change=CHG-0002
+      deployedAt=2026-09-09T08:54:15Z
     actor:
       type: human
       id: dkapper01@gmail.com
+    finishedAt: 2026-09-09T08:54:16Z
+    exitCode: 0
+    healthcheck:
+      command: sh scripts/healthcheck.sh staging
+      exitCode: 0
+      output: |
+        healthcheck.sh: renderPage ok (91 bytes)
+        healthcheck.sh: staging healthy — running 1bcd38aca0c77dd26e1bb5eb297b0bf3d51dcd28
