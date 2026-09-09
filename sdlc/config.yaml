@@ -2,11 +2,28 @@ schema: 1
 defaultRole: po
 defaultBranch: main
 codeHost: github
+# Who may do what. In local mode the acting identity is git's user.email; in hosted mode (auth: below)
+# a verified ID token is matched to an entry by `subject` (its `sub`) or, without one, by the
+# `auth.claim` (email by default) equalling `id`. Roles come from here, never from the provider.
 identities:
   - id: dkapper01@gmail.com
     name: Daniel Kapper
     github: danielyayla
     roles: [po, eng, tech_lead, platform]
+    # subject: <the OIDC `sub` of this person>   # optional: pins the match to the provider's subject instead of the email claim
+# Hosted mode (console item 3.1). Uncomment and fill both `issuer` and `clientId` to make `sdlc serve`
+# a console people sign in to; while commented the server starts in local mode (git identity + role switcher).
+# auth:
+#   provider: oidc
+#   issuer: <fill: the OpenID issuer URL, e.g. https://accounts.google.com — /.well-known/openid-configuration must resolve>
+#   clientId: <fill: the client id registered at that issuer with redirect URI http://127.0.0.1:7332/auth/callback>
+#   claim: email                # ID-token claim matched against identities[].id when no `subject` matches
+#   # audience: <aud>           # only when the provider sets `aud` to something other than clientId
+#   # scopes: [openid, email, profile]   # the default
+#   # publicUrl: https://…      # only behind a proxy or tunnel (fixes the callback origin)
+#   # sessionHours: 12
+# A confidential client passes its secret through the SDLC_OIDC_CLIENT_SECRET environment variable
+# (never in this file); a public client (PKCE) needs no secret and no variable.
 thresholds:
   autoFilesMax: 12
   maxLoopRounds: 5
@@ -18,3 +35,32 @@ eligibility: { coverage: lenient }
 products:
   - name: website
     path: .
+# Deployment environments (console item 3.6). The console runs only these commands — from the
+# checkout for `sdlc deploy|rehearse-rollback <env> <CHG>` and the console's buttons, from the
+# session worktree for the agent's deploy_<env> / rehearse_rollback tools — with SDLC_CHANGE,
+# SDLC_ENV, SDLC_ENV_KIND and SDLC_SHA set. The scripts build the commit into dist/<env>/current
+# and keep the previous release for the rollback (see scripts/*.sh); nothing is published.
+# production is the one environment behind the human gate: `deploy.authorized` by a holder of
+# gate.roles once sdlc/rollback-rehearsed is green; agents have no tool for it and the
+# production-gate hook blocks its commands in an agent's shell.
+environments:
+  - name: preview
+    kind: preview
+    description: Per-change preview build under dist/preview (agent-deployable)
+    deploy: { command: sh scripts/deploy.sh preview }
+    rollback: { command: sh scripts/rollback.sh preview }
+    healthcheck: { command: sh scripts/healthcheck.sh preview }
+  - name: staging
+    kind: staging
+    description: Shared staging build under dist/staging (agent-deployable; where the rollback is rehearsed)
+    deploy: { command: sh scripts/deploy.sh staging }
+    rollback: { command: sh scripts/rollback.sh staging }
+    healthcheck: { command: sh scripts/healthcheck.sh staging }
+  - name: production
+    kind: production
+    description: Production build under dist/production (human gate; roles below)
+    deploy: { command: sh scripts/deploy.sh production }
+    rollback: { command: sh scripts/rollback.sh production }
+    healthcheck: { command: sh scripts/healthcheck.sh production }
+    gate: { roles: [eng] }
+# harness: not declared — every session runs through Claude Code (the default), all guarantees honoured.
